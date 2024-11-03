@@ -3,39 +3,41 @@ import { simplifiedProduct } from "../interface";
 import { client } from "@/lib/sanity";
 import Image from "next/image";
 
-async function getData(cateogry: string) {
-  const query = `*[_type == "product" && category->name == "${cateogry}"] {
-        _id,
-          "imageUrl": images[0].asset->url,
-          price,
-          name,
-          "slug": slug.current,
-          "categoryName": category->name
-      }`;
+async function getData(categoryName: string) {
+  const query = `*[_type == "product" && category->name == "${categoryName}"] {
+    _id,
+    "imageUrl": images[0].asset->url,
+    price,
+    name,
+    "slug": slug.current,
+    "categoryName": category->name
+  }`;
 
   const data = await client.fetch(query);
-
   return data;
 }
 
 export const dynamic = "force-dynamic";
 
-export default async function CategoryPage({
-  params,
-}: {
-  params: { category: string };
-}) {
+// For Next.js App Router, use these types
+type Props = {
+  params: {
+    category: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export default async function CategoryPage({ params, searchParams }: Props) {
   const data: simplifiedProduct[] = await getData(params.category);
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6  lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
             Our Products for {params.category}
           </h2>
         </div>
-
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
             <div key={product._id} className="group relative">
@@ -48,7 +50,6 @@ export default async function CategoryPage({
                   height={300}
                 />
               </div>
-
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700">
