@@ -15,6 +15,7 @@ export interface fullProduct {
   categoryName: string;
   name: string;
   description: string;
+  details: string;
   price_id: string;
   amazon_link: string;
   shopify_link: string;

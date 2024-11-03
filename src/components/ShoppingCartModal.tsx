@@ -23,17 +23,15 @@ export default function ShoppingCartModal() {
 
   async function handleCheckoutClick(event: any) {
     event.preventDefault();
-    console.log("Attempting to redirect to checkout...");
     try {
       const result = await redirectToCheckout();
       if (result?.error) {
-        console.error("Checkout error:", result.error);
+        console.log("result");
       }
     } catch (error) {
-      console.error("Error caught during checkout:", error);
+      console.log(error);
     }
   }
-
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent className="sm:max-w-lg w-[90vw]">

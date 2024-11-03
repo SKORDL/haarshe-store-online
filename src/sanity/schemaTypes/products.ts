@@ -31,6 +31,11 @@ export const product = defineType({
       type: "string",
     },
     {
+      name: "details",
+      title: "Details",
+      type: "string",
+    },
+    {
       name: "price",
       title: "Price",
       type: "number",
@@ -64,6 +69,11 @@ export const product = defineType({
           type: "category",
         },
       ],
+    },
+    {
+      name: "topPicks",
+      title: "Top Picks",
+      type: "boolean",
     },
   ],
 });
