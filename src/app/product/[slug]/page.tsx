@@ -6,7 +6,7 @@ import { client } from "@/lib/sanity";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Star, Truck } from "lucide-react";
 import Newest from "@/components/Newest";
-import TopPicks from "@/components/ui/TopPicks";
+import TopPicks from "@/components/TopPicks";
 import CartProvider from "@/components/Providers";
 import InfoBoxes from "@/components/InfoBoxes";
 import ButtonProp from "@/components/ButtonProps";

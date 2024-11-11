@@ -54,30 +54,44 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <h2 className="text-xl font-semibold mb-5">CATEGORY</h2>
+              <h2 className="text-xl font-semibold mb-5">Categories</h2>
               <ul>
-                <li className="footer_links ">Utilities</li>
-                <li className="footer_links">Clothing</li>
-                <li className="footer_links">Accessories</li>
-                <li className="footer_links">Featured</li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-xl font-semibold mb-5">WHY WE CHOOSE</h2>
-              <ul>
-                <li className="footer_links">Shipping & Return</li>
-                <li className="footer_links">Secure Shopping</li>
-                <li className="footer_links">Gallery</li>
-                <li className="footer_links">Affiliates</li>
-                <li className="footer_links">Contacrts</li>
-                <li className="footer_links">
-                  <Link href="/terms">Terms and condition</Link>
+                <li className="footer_links ">
+                  <Link href="/Utilities">Utilities</Link>
                 </li>
-                <li className="footer_links">Privacy Policy</li>
+                <li className="footer_links ">
+                  <Link href="/Men">Men</Link>
+                </li>
+                <li className="footer_links ">
+                  <Link href="/Women">Women</Link>
+                </li>
+                <li className="footer_links ">
+                  <Link href="/Accessories">Accessories</Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h2 className="text-xl font-semibold mb-5">STORE INFORMATION</h2>
+              <h2 className="text-xl font-semibold mb-5">Quick Links</h2>
+              <ul>
+                <li className="footer_links ">
+                  <Link href="/">Home</Link>
+                </li>
+                <li className="footer_links ">
+                  <Link href="/all">Shop</Link>
+                </li>
+                <li className="footer_links ">
+                  <Link href="/About">About Us</Link>
+                </li>
+                <li className="footer_links ">
+                  <Link href="/About">Refund Policy</Link>
+                </li>
+                <li className="footer_links ">
+                  <Link href="/About">Privacy Policy</Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold mb-5">Store Information</h2>
               <ul>
                 <li className="footer_links">
                   17303 Yukon Apt G Torrance,

@@ -1,25 +1,30 @@
 import BannerOffer2 from "@/components/AdBanner";
 import Hero from "@/components/Hero";
 import Newest from "@/components/Newest";
-import TopPicks from "@/components/ui/TopPicks";
+import TopPicks from "@/components/TopPicks";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-white pb-6 sm:pb-8 lg:pb-12">
-      <Hero />
-      <Newest />
-      <div className="flex justify-center">
-        <BannerOffer2 />
+    <div className="relative h-full w-full">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px]  bg-purple-800 opacity-20 blur-[100px]"></div>
       </div>
-      <TopPicks />
-      <div className="flex justify-center mt-10">
-        <Image
-          src="/testimonails.png"
-          alt="Testimonial Image"
-          width={1300}
-          height={2000}
-        ></Image>
+      <div className="relative z-10 pb-6 sm:pb-8 lg:pb-12">
+        <Hero />
+        <Newest />
+        <div className="flex justify-center">
+          <BannerOffer2 />
+        </div>
+        <TopPicks />
+        <div className="flex justify-center mt-10">
+          <Image
+            src="/testimonails.png"
+            alt="Testimonial Image"
+            width={1300}
+            height={2000}
+          ></Image>
+        </div>
       </div>
     </div>
   );
