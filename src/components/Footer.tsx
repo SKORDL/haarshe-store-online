@@ -13,7 +13,9 @@ const Footer = () => {
         <div className="container">
           <div className="upper grid grid-cols-1  lg:grid-cols-2 gap-4 items-center pb-10 border-b">
             <div className="">
-              <h2 className="font-semibold text-xl">KNOW IT ALL FIRST!</h2>
+              <h2 className="font-semibold text-xl">
+                Premium products at your doorsteps!
+              </h2>
               <p className="text-[#323232a1]">
                 <small>
                   Never Miss Anything From Multikart By Signing Up To Our
@@ -34,9 +36,8 @@ const Footer = () => {
               </div>
               <p className="text-gray-500 text-sm">
                 <small>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam,
+                  We provide you with top notch quality products, competetive
+                  prices and fast delivery, so what are you waiting for?
                 </small>
               </p>
 
@@ -55,7 +56,7 @@ const Footer = () => {
             <div>
               <h2 className="text-xl font-semibold mb-5">CATEGORY</h2>
               <ul>
-                <li className="footer_links ">Womans</li>
+                <li className="footer_links ">Utilities</li>
                 <li className="footer_links">Clothing</li>
                 <li className="footer_links">Accessories</li>
                 <li className="footer_links">Featured</li>

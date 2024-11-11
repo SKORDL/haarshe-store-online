@@ -26,8 +26,8 @@ const BannerOffer2: React.FC = () => {
               special offers
             </h2>
             <span className="block mt-6 text-slate-500 dark:text-slate-400">
-              Register to receive news about the latest, savings combos,
-              discount codes...
+              Browse now through our catalogue and grab before the stock runs
+              out
             </span>
             <ul className="space-y-4 mt-10">
               <li className="flex items-center space-x-4">
@@ -43,7 +43,7 @@ const BannerOffer2: React.FC = () => {
                   02
                 </span>
                 <span className="font-medium text-neutral-700 dark:text-neutral-300">
-                  Freeship
+                  Premium products
                 </span>
               </li>
               <li className="flex items-center space-x-4">
@@ -51,7 +51,7 @@ const BannerOffer2: React.FC = () => {
                   03
                 </span>
                 <span className="font-medium text-neutral-700 dark:text-neutral-300">
-                  Premium magazines
+                  Best Sellers
                 </span>
               </li>
             </ul>
