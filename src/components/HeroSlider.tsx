@@ -7,30 +7,31 @@ import {
   ShoppingBag,
   Leaf,
   Package,
-  Recycle,
+  Flame,
 } from "lucide-react";
+import Link from "next/link";
 
 const slides = [
   {
     image:
-      "https://images.unsplash.com/photo-1610024062303-e355e94c7a8c?q=80&w=2070&auto=format&fit=crop",
-    title: "Eco-Friendly Essentials",
+      "https://plus.unsplash.com/premium_photo-1726736512382-dde5c56ecdd1?q=80&w=2979&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Premium Essentials",
     subtitle: "Sustainable living starts here",
-    description: "Shop our collection of environmentally conscious products",
+    description: "Shop our collection of top-notch quality products",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2074&auto=format&fit=crop",
-    title: "Zero Waste Living",
+      "https://images.unsplash.com/photo-1557330359-ffb0deed6163?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Quality Living",
     subtitle: "Reduce your footprint",
-    description: "Discover our range of reusable alternatives",
+    description: "Discover our range of daily use alternatives",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1585914924626-15adac1e6402?q=80&w=2071&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1681490810580-1e1525ee415f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Sustainable Style",
     subtitle: "Beauty meets responsibility",
-    description: "Eco-conscious choices for modern living",
+    description: "Perfect item choices for modern living",
   },
 ];
 
@@ -78,10 +79,12 @@ export default function HeroSlider() {
                   {slide.title}
                 </h1>
                 <p className="text-xl md:text-2xl">{slide.description}</p>
-                <button className="mt-8 px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-medium inline-flex items-center space-x-2 transition duration-300">
-                  <ShoppingBag className="w-5 h-5" />
-                  <span>Shop Now</span>
-                </button>
+                <Link href="/all">
+                  <button className="mt-8 px-8 py-4 bg-violet-900 hover:bg-violet-700 text-white rounded-full font-medium inline-flex items-center space-x-2 transition duration-300">
+                    <ShoppingBag className="w-5 h-5" />
+                    <span>Shop Now</span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -123,8 +126,8 @@ export default function HeroSlider() {
               <Leaf className="w-6 h-6 text-green-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-lg">Eco-Friendly</h3>
-              <p className="text-gray-600">Sustainable materials</p>
+              <h3 className="font-semibold text-lg">Innovate</h3>
+              <p className="text-gray-600">Innovate Your Space</p>
             </div>
           </div>
           <div className="flex items-center space-x-4 p-6 bg-white rounded-xl shadow-lg">
@@ -132,17 +135,17 @@ export default function HeroSlider() {
               <Package className="w-6 h-6 text-blue-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-lg">Zero Waste</h3>
-              <p className="text-gray-600">Minimal packaging</p>
+              <h3 className="font-semibold text-lg">Quality awaits</h3>
+              <p className="text-gray-600">Quality daily essentials</p>
             </div>
           </div>
           <div className="flex items-center space-x-4 p-6 bg-white rounded-xl shadow-lg">
             <div className="p-3 bg-purple-100 rounded-lg">
-              <Recycle className="w-6 h-6 text-purple-600" />
+              <Flame className="w-6 h-6 text-purple-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-lg">Recyclable</h3>
-              <p className="text-gray-600">100% recyclable products</p>
+              <h3 className="font-semibold text-lg">Stylish</h3>
+              <p className="text-gray-600">Your dream products awaits</p>
             </div>
           </div>
         </div>
