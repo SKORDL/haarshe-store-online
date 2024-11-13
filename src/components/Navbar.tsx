@@ -9,18 +9,17 @@ import { useState } from "react";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Men", href: "/Men" },
-  { name: "Women", href: "/Women" },
-  { name: "All Products", href: "/all" },
+  { name: "Shop", href: "/all" },
+  { name: "Contact Us", href: "/ContactUs" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const { handleCartClick } = useShoppingCart();
+  const { handleCartClick, cartCount = 0 } = useShoppingCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="mb-8 border-b">
+    <header className="border-b">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
           <img
@@ -62,6 +61,11 @@ export default function Navbar() {
             className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
           >
             <ShoppingBag />
+            {cartCount > 0 && (
+              <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-primary text-orange rounded-full px-2 text-xs font-bold">
+                {cartCount}
+              </span>
+            )}
             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
               Cart
             </span>
@@ -69,7 +73,7 @@ export default function Navbar() {
           <Button
             variant={"outline"}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
+            className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none lg:hidden"
           >
             <Menu />
             <span className="hidden text-xs font-semibold text-gray-500 sm:block">
