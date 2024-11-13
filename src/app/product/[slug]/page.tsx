@@ -39,7 +39,7 @@ export default async function ProductPage({
   const data: fullProduct = await getData(slug);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-8">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="w-full">
@@ -128,6 +128,15 @@ export default async function ProductPage({
           </h1>
           <p className="mt-12 text-base text-gray-500 tracking-wide">
             {data.details}
+          </p>
+        </div>
+        <div className="mt-10 border-t border-slate-150"></div>
+        <div>
+          <h1 className="mt-8 text-2xl font-bold text-gray-800 lg:text-3xl">
+            Reviews
+          </h1>
+          <p className="mt-12 text-base text-gray-500 tracking-wide">
+            Give a review
           </p>
         </div>
         <div className="mt-10 border-t border-slate-150"></div>

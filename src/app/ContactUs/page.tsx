@@ -38,7 +38,7 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-8 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className=" mt-16 bg-white rounded-lg shadow-md p-8 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* Left side content */}
       <div className="flex flex-col justify-center">
         <h2 className="text-3xl font-bold mb-4">GET IN TOUCH WITH US</h2>

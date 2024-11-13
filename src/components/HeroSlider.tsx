@@ -54,7 +54,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <div className="relative h-screen bg-gray-50">
+    <div className="relative h-screen bg-transparent">
       {/* Slider */}
       <div className="relative h-[70vh] overflow-hidden">
         {slides.map((slide, index) => (

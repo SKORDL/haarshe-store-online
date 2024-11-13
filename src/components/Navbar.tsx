@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu } from "lucide-react";
+import { ShoppingBag, Menu, LogOut, User } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
 import { useState } from "react";
+import { useAuth } from "@/app/context/AuthContext";
+import AuthModal from "./AuthModal";
 
 const links = [
   { name: "Home", href: "/" },
@@ -17,6 +19,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const { handleCartClick, cartCount = 0 } = useShoppingCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   return (
     <header className="border-b">
@@ -70,6 +74,30 @@ export default function Navbar() {
               Cart
             </span>
           </Button>
+          <div className="flex items-center space-x-4">
+            {user ? (
+              <div className="flex items-center space-x-4">
+                <Button
+                  variant={"outline"}
+                  onClick={logout}
+                  className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
+                >
+                  <LogOut />
+                </Button>
+              </div>
+            ) : (
+              <Button
+                variant={"outline"}
+                onClick={() => setIsAuthModalOpen(true)}
+                className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
+              >
+                <User />
+                <span className="hidden text-xs font-semibold text-gray-500 sm:block">
+                  Login
+                </span>
+              </Button>
+            )}
+          </div>
           <Button
             variant={"outline"}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -109,6 +137,10 @@ export default function Navbar() {
           </nav>
         </div>
       )}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+      />
     </header>
   );
 }
