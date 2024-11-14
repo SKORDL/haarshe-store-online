@@ -1,85 +1,118 @@
 "use client";
 
-import React, {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from "react";
+import { createContext, ReactNode, useState, useContext } from "react";
+import { usersClient } from "@/sanity/lib/usersClient";
+import { groq } from "next-sanity";
 
 interface User {
+  _id: string;
   email: string;
-}
-
-interface StoredUser {
-  email: string;
-  password: string;
+  username: string;
 }
 
 interface AuthContextType {
   user: User | null;
-  login: (email: string, password: string) => string | null;
-  signup: (email: string, password: string) => string | null;
+  login: (email: string, password: string) => Promise<string | null>;
+  signup: (
+    email: string,
+    password: string,
+    username: string
+  ) => Promise<string | null>;
   logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextType | null>(null);
+export const AuthContext = createContext<AuthContextType | null>(null);
 
-const USERS_STORAGE_KEY = "eco_shop_users";
-const CURRENT_USER_KEY = "eco_shop_current_user";
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
 
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(() => {
-    const storedUser = localStorage.getItem(CURRENT_USER_KEY);
-    return storedUser ? JSON.parse(storedUser) : null;
-  });
+  const signup = async (email: string, password: string, username: string) => {
+    try {
+      // Check if user already exists by email
+      const existingUserByEmail = await usersClient.fetch(
+        groq`*[_type == "user" && email == $email][0]`,
+        { email }
+      );
 
-  // Load stored users or initialize empty array
-  const getStoredUsers = (): StoredUser[] => {
-    const users = localStorage.getItem(USERS_STORAGE_KEY);
-    return users ? JSON.parse(users) : [];
+      if (existingUserByEmail) {
+        return "Email already registered";
+      }
+
+      // Check if username is taken
+      const existingUserByUsername = await usersClient.fetch(
+        groq`*[_type == "user" && username == $username][0]`,
+        { username }
+      );
+
+      if (existingUserByUsername) {
+        return "Username already taken";
+      }
+
+      // Create new user document
+      const newUser = await usersClient.create({
+        _type: "user",
+        email,
+        username,
+        password, // Note: In production, password should be hashed
+        createdAt: new Date().toISOString(),
+      });
+
+      if (!newUser._id) {
+        throw new Error("Failed to create user");
+      }
+
+      // Set user state without password
+      setUser({
+        _id: newUser._id,
+        email: newUser.email,
+        username: newUser.username,
+      });
+
+      return null;
+    } catch (error) {
+      console.error("Signup error:", error);
+      return "Error signing up. Please try again.";
+    }
   };
 
-  const signup = (email: string, password: string): string | null => {
-    const users = getStoredUsers();
+  const login = async (email: string, password: string) => {
+    try {
+      // Fetch user by email
+      const foundUser = await usersClient.fetch(
+        groq`*[_type == "user" && email == $email][0]{
+          _id,
+          email,
+          username,
+          password
+        }`,
+        { email }
+      );
 
-    // Check if user already exists
-    if (users.some((u) => u.email === email)) {
-      return "Email already registered";
+      if (!foundUser) {
+        return "User not found";
+      }
+
+      if (foundUser.password !== password) {
+        // In production, use proper password comparison
+        return "Invalid password";
+      }
+
+      // Set user state without password
+      setUser({
+        _id: foundUser._id,
+        email: foundUser.email,
+        username: foundUser.username,
+      });
+
+      return null;
+    } catch (error) {
+      console.error("Login error:", error);
+      return "Error logging in. Please try again.";
     }
-
-    // Add new user
-    const newUser = { email, password };
-    users.push(newUser);
-    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
-
-    // Log user in after signup
-    setUser({ email });
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify({ email }));
-    return null;
-  };
-
-  const login = (email: string, password: string): string | null => {
-    const users = getStoredUsers();
-    const user = users.find((u) => u.email === email);
-
-    if (!user) {
-      return "User not found";
-    }
-
-    if (user.password !== password) {
-      return "Invalid password";
-    }
-
-    setUser({ email });
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify({ email }));
-    return null;
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem(CURRENT_USER_KEY);
   };
 
   return (
@@ -87,7 +120,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       {children}
     </AuthContext.Provider>
   );
-}
+};
 
 export function useAuth() {
   const context = useContext(AuthContext);
