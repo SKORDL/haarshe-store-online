@@ -12,6 +12,8 @@ import AuthModal from "./AuthModal";
 const links = [
   { name: "Home", href: "/" },
   { name: "Shop", href: "/all" },
+  { name: "🌟 New Arrivals", href: "/new-arrivals" },
+  { name: "❇️ On Sale", href: "/sale" },
   { name: "Contact Us", href: "/ContactUs" },
 ];
 
@@ -34,8 +36,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Navigation links hidden on mobile, shown on larger screens */}
-        <nav className="hidden gap-12 lg:flex 2xl:ml-16">
+        {/* Navigation links shown on larger screens */}
+        <nav className="hidden gap-6 lg:flex 2xl:ml-16">
           {links.map((link, idx) => (
             <div key={idx}>
               {pathname === link.href ? (
@@ -83,6 +85,9 @@ export default function Navbar() {
                   className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
                 >
                   <LogOut />
+                  <span className="hidden text-xs font-semibold text-gray-500 sm:block">
+                    {user.username}
+                  </span>
                 </Button>
               </div>
             ) : (
@@ -111,10 +116,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Navigation links shown on mobile, hidden on larger screens */}
+      {/* Navigation links shown on mobile*/}
       {isMenuOpen && (
         <div className="lg:hidden px-4 py-3 border-t">
-          <nav className="flex flex-col gap-4">
+          <nav className="flex flex-col gap-1">
             {links.map((link, idx) => (
               <div key={idx}>
                 {pathname === link.href ? (
