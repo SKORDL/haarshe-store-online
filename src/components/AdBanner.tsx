@@ -9,7 +9,6 @@ const BannerOffer2: React.FC = () => {
           <img
             className="absolute w-full h-full object-contain dark:opacity-5"
             src="https://chisnghiax.com/ciseco/static/media/Moon.bf27dc577d1acccaba48430d353dbbe0.svg"
-            alt="backgroundLineSvg"
           />
         </div>
 
