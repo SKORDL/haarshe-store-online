@@ -62,16 +62,19 @@ const Footer = () => {
               <h2 className="text-xl font-semibold mb-5">Categories</h2>
               <ul>
                 <li className="footer_links mb-2">
-                  <Link href="/Utilities">Utilities</Link>
+                  <Link href="/Kitchen-Accessories">Kitchen Accessories</Link>
                 </li>
                 <li className="footer_links mb-2">
-                  <Link href="/Men">Men</Link>
+                  <Link href="/Wearables">Wearables</Link>
                 </li>
                 <li className="footer_links mb-2">
-                  <Link href="/Women">Women</Link>
+                  <Link href="/Gadgets">Gadgets</Link>
                 </li>
                 <li className="footer_links mb-2">
-                  <Link href="/Accessories">Accessories</Link>
+                  <Link href="/New-Arrivals">New Arrivals</Link>
+                </li>
+                <li className="footer_links mb-2">
+                  <Link href="/On-Sale">On Sale</Link>
                 </li>
               </ul>
             </div>
