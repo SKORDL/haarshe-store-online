@@ -10,6 +10,7 @@ import TopPicks from "@/components/TopPicks";
 import CartProvider from "@/components/Providers";
 import InfoBoxes from "@/components/InfoBoxes";
 import ButtonProp from "@/components/ButtonProps";
+import Ad from "@/components/ad";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
@@ -140,6 +141,9 @@ export default async function ProductPage({
           </p>
         </div>
         <div className="mt-10 border-t border-slate-150"></div>
+        <div>
+          <Ad />
+        </div>
         <div>
           <TopPicks />
         </div>

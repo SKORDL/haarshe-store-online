@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const Ad = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="h-screen overflow-hidden">
       <main className="relative h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
         {/* Animated blobs with adjusted positions */}
         <div className="absolute -left-40 top-1/4 h-72 w-72 animate-blob rounded-full bg-red-300 opacity-70 mix-blend-multiply blur-xl filter"></div>
@@ -26,7 +26,7 @@ const Ad = () => {
                   Shop Now
                 </button>
                 <button className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-red-500 border-2 border-red-500 rounded-lg hover:bg-red-50 transition duration-200">
-                  On Sale
+                  Explore Collections
                 </button>
               </div>
             </div>

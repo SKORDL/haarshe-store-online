@@ -20,7 +20,6 @@ export default function Home() {
           <BannerOffer2 />
         </div>
         <TopPicks />
-        <Ad />
         <div className="flex justify-center mt-10">
           <Image
             src="/testimonails.png"
