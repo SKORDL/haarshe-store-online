@@ -5,7 +5,7 @@ import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 
 async function getData() {
-  const query = `*[_type == "product" && topPicks == true] | order(_createdAt desc) {
+  const query = `*[_type == "product" && onSale == true] | order(_createdAt desc) {
       _id,
       price,
       name,
@@ -25,7 +25,7 @@ export default async function page() {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-6 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-          All Products
+          On Sale
         </h1>
         <div className=" pt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (

@@ -33,7 +33,11 @@ export const product = defineType({
     {
       name: "details",
       title: "Details",
-      type: "string",
+      type: "text",
+      rows: 10,
+      options: {
+        whiteSpace: "pre-line",
+      },
     },
     {
       name: "price",
@@ -73,6 +77,16 @@ export const product = defineType({
     {
       name: "topPicks",
       title: "Top Picks",
+      type: "boolean",
+    },
+    {
+      name: "onSale",
+      title: "On Sale",
+      type: "boolean",
+    },
+    {
+      name: "newArrivals",
+      title: "New Arrivals",
       type: "boolean",
     },
   ],
