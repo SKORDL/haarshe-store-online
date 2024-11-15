@@ -6,11 +6,13 @@ const page = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-2xl font-bold text-center mb-6">About Us</h2>
         <p className="text-gray-700 leading-relaxed mb-8">
-          At our core, we are dedicated to providing high-quality products that
-          enhance everyday life. With a focus on innovation and customer
-          satisfaction, we carefully curate a diverse range of items to meet
-          your unique needs. Our mission is to blend functionality with style,
-          delivering solutions that make a difference in your daily routine.
+          At Haarsheonline, we are dedicated to delivering a seamless shopping
+          experience that empowers customers to find exactly what they need with
+          ease and convenience. As an online marketplace, we offer a diverse
+          range of high-quality products, backed by exceptional customer service
+          and a commitment to fast, reliable delivery. Whether you’re looking
+          for everyday essentials, unique finds, or the latest trends, we make
+          shopping simple, enjoyable, and accessible—anytime, anywhere."
         </p>
         <div className="flex flex-col sm:flex-row justify-between">
           <div className="sm:mr-8 mb-8 sm:mb-0">
@@ -43,7 +45,7 @@ const page = () => {
       </div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-3xl font-bold mb-6">Return and Refund Policy</h1>
-        <p className="text-gray-600 mb-4">Last updated: August 29, 2024</p>
+        <p className="text-gray-600 mb-4">Last updated: November 1st, 2024</p>
         <p className="mb-4">Thank you for shopping at Haarshe Store.</p>
         <p className="mb-4">
           If, for any reason, You are not completely satisfied with a purchase

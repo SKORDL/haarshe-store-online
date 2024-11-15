@@ -14,7 +14,7 @@ import Link from "next/link";
 const slides = [
   {
     image:
-      "https://plus.unsplash.com/premium_photo-1726736512382-dde5c56ecdd1?q=80&w=2979&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1522923034308-c53a7abf36b8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Premium Essentials",
     subtitle: "Sustainable living starts here",
     description: "Shop our collection of top-notch quality products",
@@ -28,7 +28,7 @@ const slides = [
   },
   {
     image:
-      "https://plus.unsplash.com/premium_photo-1681490810580-1e1525ee415f?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1671387863859-f4e365e196b8?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Sustainable Style",
     subtitle: "Beauty meets responsibility",
     description: "Perfect item choices for modern living",

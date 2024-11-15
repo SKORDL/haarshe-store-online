@@ -22,12 +22,12 @@ export default async function TopPicks() {
   const data: simplifiedProduct[] = await getData();
 
   return (
-    <div className="bg-white">
+    <div className="bg-transparent py-8">
       <div className="mx-auto max-w-2xl px-4 py-6 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <h1 className="text-2xl font-bold tracking-tight text-gray-900">
           Best Sellers. Best selling of the month
         </h1>
-        <div className="pt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="pt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 bg-white">
           {data.map((product) => (
             <div
               key={product._id}
