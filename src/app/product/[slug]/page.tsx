@@ -22,7 +22,11 @@ async function getData(slug: string) {
           details,
           "slug": slug.current,
           "categoryName": category->name,
-          price_id
+          price_id,
+          amazon_link,
+          shopify_link,
+          wallmart_link,
+          tiktok_link
       }`;
 
   const data = await client.fetch(query);
@@ -109,9 +113,30 @@ export default async function ProductPage({
               <span className="text-sm">or buy on</span>
             </div>
             <div className="flex items-center gap-3">
-              <ButtonProp className="mt-6" text="Amazon" variant="primary" />
-              <ButtonProp className="mt-6" text="Wallmart" variant="outline" />
-              <ButtonProp className="mt-6" text="Shopify" variant="secondary" />
+              <ButtonProp
+                className="mt-6"
+                text="Amazon"
+                variant="primary"
+                link={data.amazon_link}
+              />
+              <ButtonProp
+                className="mt-6"
+                text="WallMart"
+                variant="outline"
+                link={data.wallmart_link}
+              />
+              <ButtonProp
+                className="mt-6"
+                text="Shopify"
+                variant="secondary"
+                link={data.shopify_link}
+              />
+              <ButtonProp
+                className="mt-6"
+                text="TikTok"
+                variant="outlineBlack"
+                link={data.tiktok_link}
+              />
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">

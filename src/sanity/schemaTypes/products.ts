@@ -60,6 +60,11 @@ export const product = defineType({
       type: "string",
     },
     {
+      name: "tiktok_link",
+      title: "TikTok Link",
+      type: "string",
+    },
+    {
       name: "price_id",
       title: "Stripe Price ID",
       type: "string",

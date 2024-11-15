@@ -25,13 +25,20 @@ export default async function page() {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-6 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-          On Sale
+          All Products
         </h1>
-        <div className=" pt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="pt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((product) => (
-            <div key={product._id} className="group relative">
-              <Link href={`/product/${product.slug}`}>
-                <div className="flex flex-col">
+            <div
+              key={product._id}
+              className="group relative flex flex-col h-full"
+            >
+              <Link
+                href={`/product/${product.slug}`}
+                className="flex flex-col flex-grow"
+              >
+                <div className="flex flex-col h-full">
+                  {/* Image container with fixed aspect ratio */}
                   <div className="aspect-square w-full overflow-hidden rounded-lg bg-gray-200 group-hover:opacity-75">
                     <Image
                       src={product.imageUrl}
@@ -41,23 +48,33 @@ export default async function page() {
                       height={300}
                     />
                   </div>
-                  <h3 className="text-xl font-semibold mb-1 pt-1">
-                    {product.name}
-                  </h3>
-                  <p className="text-gray-400 mb-2">{product.categoryName}</p>
 
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="inline-flex items-center justify-center rounded-lg bg-green-100 px-4 py-2">
-                      <span className="text-green-600 text-lg font-semibold">
-                        ${product.price}
-                      </span>
+                  {/* Product info with fixed heights */}
+                  <div className="flex flex-col flex-grow justify-between">
+                    {/* Title and category with fixed heights */}
+                    <div className="pt-4">
+                      <h3 className="text-xl font-semibold line-clamp-2 min-h-[3.5rem]">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-400 h-6 overflow-hidden">
+                        {product.categoryName}
+                      </p>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-gray-600">
-                        {4.5} ({10} reviews)
-                      </span>
+                    {/* Price and rating section */}
+                    <div className="flex items-center justify-between mt-4">
+                      <div className="inline-flex items-center justify-center rounded-lg bg-green-100 px-4 py-2">
+                        <span className="text-green-600 text-lg font-semibold">
+                          ${product.price}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                        <span className="text-gray-600">
+                          {4.5} ({10} reviews)
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -17,7 +17,8 @@ export interface fullProduct {
   description: string;
   details: string;
   price_id: string;
-  amazon_link: string;
-  shopify_link: string;
-  wallmart_link: string;
+  amazon_link: string | null;
+  shopify_link: string | null;
+  wallmart_link: string | null;
+  tiktok_link: string | null;
 }
