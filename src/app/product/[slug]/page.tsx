@@ -76,7 +76,7 @@ export default async function ProductPage({
                   ${data.price}
                 </span>
                 <span className="mb-0.5 text-red-500 line-through">
-                  ${data.price + 30}
+                  ${parseFloat((data.price + 30).toFixed(2))}
                 </span>
               </div>
 
