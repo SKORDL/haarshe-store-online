@@ -5,13 +5,6 @@ const BannerOffer2: React.FC = () => {
   return (
     <div className="container mt-12 md:mt-20 lg:mt-26 flex justify-center">
       <div className="relative bg-[#F8FAFC] rounded-[40px] px-5 pt-10 lg:px-24 max-w-screen-xl">
-        <div className="absolute inset-0">
-          <img
-            className="absolute w-full h-full object-contain dark:opacity-5"
-            src="https://chisnghiax.com/ciseco/static/media/Moon.bf27dc577d1acccaba48430d353dbbe0.svg"
-          />
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
           <div className="flex flex-col h-full justify-center">
             <div className="w-16">
