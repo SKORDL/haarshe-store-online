@@ -6,9 +6,9 @@ import { AlertCircle, CheckCircle } from "lucide-react";
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
+    from_name: "",
+    from_email: "",
+    from_phone: "",
     message: "",
   });
 
@@ -46,7 +46,12 @@ const ContactUs: React.FC = () => {
         type: "success",
         message: "Message sent successfully! We'll get back to you soon.",
       });
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({
+        from_name: "",
+        from_email: "",
+        from_phone: "",
+        message: "",
+      });
     } catch (error: any) {
       console.error("Failed to send email:", error.text);
       setStatus({
@@ -125,7 +130,7 @@ const ContactUs: React.FC = () => {
             name="from_name"
             placeholder="Your Name"
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={formData.name}
+            value={formData.from_name}
             onChange={handleInputChange}
             required
           />
@@ -134,7 +139,7 @@ const ContactUs: React.FC = () => {
             name="from_email"
             placeholder="Your Email"
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={formData.email}
+            value={formData.from_email}
             onChange={handleInputChange}
             required
           />
@@ -143,7 +148,7 @@ const ContactUs: React.FC = () => {
             name="from_phone"
             placeholder="Your Phone"
             className="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={formData.phone}
+            value={formData.from_phone}
             onChange={handleInputChange}
             required
           />
