@@ -97,7 +97,7 @@ export default async function ProductPage({
                 key={data._id}
                 price_id={data.price_id}
               />
-              <CartProvider>
+              {/* <CartProvider>
                 <CheckoutNow
                   currency="USD"
                   description={data.description}
@@ -107,7 +107,7 @@ export default async function ProductPage({
                   key={data._id}
                   price_id={data.price_id}
                 />
-              </CartProvider>
+              </CartProvider> */}
             </div>
 
             <div className="mt-6 flex items-center gap-2 text-gray-500">
