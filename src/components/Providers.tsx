@@ -10,7 +10,7 @@ export default function CartProvider({ children }: { children: ReactNode }) {
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
       successUrl="https://www.haarsheonline.net/stripe/success"
-      cancelUrl="https://www.haarsheonline.net/error"
+      cancelUrl="https://www.haarsheonline.net/stripe/error"
       currency="USD"
       billingAddressCollection={true}
       shouldPersist={true}
