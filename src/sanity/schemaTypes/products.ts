@@ -70,6 +70,16 @@ export const product = defineType({
       type: "string",
     },
     {
+      name: "reviews",
+      title: "Reviews",
+      type: "number",
+    },
+    {
+      name: "ratings",
+      title: "Ratings",
+      type: "number",
+    },
+    {
       name: "category",
       title: "Product Category",
       type: "reference",

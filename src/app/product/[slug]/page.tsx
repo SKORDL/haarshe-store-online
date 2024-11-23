@@ -23,6 +23,8 @@ async function getData(slug: string) {
           "slug": slug.current,
           "categoryName": category->name,
           price_id,
+          reviews,
+          ratings,
           amazon_link,
           shopify_link,
           wallmart_link,
@@ -62,12 +64,12 @@ export default async function ProductPage({
             </div>
             <div className="mb-6 flex items-center gap-3 md:mb-10">
               <Button className="rounded-full gap-x-2">
-                <span className="text-sm">4.2</span>
+                <span className="text-sm">{data.reviews}</span>
                 <Star className="h-5 w-5" />
               </Button>
 
               <span className="text-sm text-gray-500 transition duration-100">
-                56 Ratings
+                {data.ratings} Ratings
               </span>
             </div>
             <div className="mb-4">

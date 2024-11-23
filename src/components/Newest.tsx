@@ -12,6 +12,8 @@ async function getData() {
     "slug": slug.current,
     "categoryName": category->name,
     "imageUrl": images[0].asset->url,
+    reviews,
+    ratings
   }`;
 
   const data = await client.fetch(query);
@@ -72,7 +74,7 @@ export default async function Newest() {
                       <div className="flex items-center gap-2">
                         <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                         <span className="text-gray-600">
-                          {4.5} ({10} reviews)
+                          {product.ratings} ({product.reviews} reviews)
                         </span>
                       </div>
                     </div>
