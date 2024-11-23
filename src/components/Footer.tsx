@@ -1,6 +1,6 @@
 "use client";
 
-import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -19,8 +19,7 @@ const Footer = () => {
               </h2>
               <p className="text-[#323232a1] text-center lg:text-left">
                 <small>
-                  Never miss anything from Multikart by signing up to our
-                  newsletter.
+                  Never miss anything from Us by signing up to our newsletter.
                 </small>
               </p>
             </div>
@@ -48,10 +47,10 @@ const Footer = () => {
                 <Link href="https://www.tiktok.com/@haarshe?_t=8qpiDVIPhz0&_r=1">
                   <FaTiktok />
                 </Link>
-                <Link href="https://www.tiktok.com/@haarshe?_t=8qpiDVIPhz0&_r=1">
-                  <FaYoutube className="text-red-500" />
+                <Link href="https://www.facebook.com/profile.php?id=61564404159725">
+                  <FaFacebook className="text-blue-500" />
                 </Link>
-                <Link href="https://www.tiktok.com/@haarshe?_t=8qpiDVIPhz0&_r=1">
+                <Link href="https://www.instagram.com/haarsheonline">
                   <FaInstagram className="text-purple-700" />
                 </Link>
               </div>
